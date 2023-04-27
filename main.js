@@ -9,16 +9,17 @@ if(nombre!= "" && apellido!=""){
 }
 
 
-for(let turno= 1;turno <= 10; turno ++){
+for(let turno= 1;turno <= 4; turno ++){
  let numero= prompt("Ingrese DNI")
- alert("Su turno es el" + ""+ turno);
+ alert("Su turno es el" + ""+ turno + "el tiempo de espera es...");
 }
 alert("No hay mas turnos")
 
 
 let encuentro=("Tiempo de espera para el turno")
 function tiempo(a, b ){
-   return 10 && 20; 
+   let resultado=a+b;
+   console.log("Tiempo" + resultado);
 }
-let resultadotiempo= espera (10 && 20); 
-console.log("Tiempo"+ resultadotiempo);
+tiempo(10,20);
+
