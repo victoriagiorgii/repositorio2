@@ -16,7 +16,7 @@ for(let turno= 1;turno <= 4; turno ++){
 alert("No hay mas turnos")
 
 
-let encuentro=("Tiempo de espera para el turno")
+
 function tiempo(a, b ){
    let resultado=a+b;
    console.log("Tiempo" + resultado);
