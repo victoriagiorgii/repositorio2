@@ -1,4 +1,46 @@
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Scope One', serif; */
+
 body{
     background-color: rgb(238, 196, 157);
     
+}
+.logo{
+    padding-left: 20px;
+    margin: 10px;
+    padding-top: 20px;
+}
+.imagenes{
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.img-mine{
+   margin-left: 150px;
+  
+}
+
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    padding-left: 600px;
+    margin: 60px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+h2{
+    font-style: normal;
+    margin: 30px;
+}
+p{
+    margin: 60px;
+}
+.fontletra{
+font-family: 'Scope One', serif;
+}
+
+.navbar-mine{
+    padding-right: 20px;
+    margin-bottom: 50px;
 }
