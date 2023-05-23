@@ -1,6 +1,7 @@
 //clientes
-class staff{
-    constructor(nombre,apellido,dni,edad){
+class Staff{
+    constructor(id,nombre,apellido,dni,edad){
+    this.id=id;
      this.nombre=nombre;
      this.apellido=apellido;
      this.dni=dni;
@@ -8,10 +9,10 @@ class staff{
     }
 }
 
-const staffEmilio= new staff ("Emilio","Pereyra",35028432,22);
-const staffMartina= new staff ("Martina","Cosar",28021620,26);
-const staffRocio= new staff ("Rocio","Carrizo",31675297,30);
-const staffNicolas= new staff ("Nicolas","Pedernera",20849275,28);
+const staffEmilio= new Staff ("EMILIO","Emilio","Pereyra",35028432,22);
+const staffMartina= new Staff ("MARTINA","Martina","Cosar",28021620,26);
+const staffRocio= new Staff ("ROCIO","Rocio","Carrizo",31675297,30);
+const staffNicolas= new Staff ("NICOLAS","Nicolas","Pedernera",20849275,28);
 
 const arraystaffs=[];
 
@@ -25,68 +26,79 @@ console.log(arraystaffs);
 //presupuesto
 
 const presupuesto=[
-    {id:1, nombre:("Oficina"),precio:20.000},
-    {id:2, nombre:("Jardin"), precio:26.000},
-    {id:3, nombre:("Habitacion"), precio:30.000},
-    {id:4, nombre:("Living"), precio:22.500},
-    {id:5, nombre:("Cocina/Comedor"), precio:34.500},
+    {id:1, nombre:("oficina"),precio:20000},
+    {id:2, nombre:("jardin"), precio:26000},
+    {id:3, nombre:("habitacion"), precio:30000},
+    {id:4, nombre:("living"), precio:22500},
+    {id:5, nombre:("cocina/comedor"), precio:34500},
 ];
 console.log(presupuesto);
+
+
+
 
 //bienvenidos
 function bienvenidos(){
     alert("Bienvenidos a VGdecohome");
-    let staff= parseInt(prompt("Selecciona con que staff va qa querer atenderce: \n 1)Emilio \n 2)Martina \n 3)Rocio \n 4)Nicolas \n 5)Ninguno"));
+    let nombreBuscar= prompt("Ingrese nombre del staff que quiere: \n Emilio \n Martina \n Rocio \n Nicolas \n Ninguno").toUpperCase();
+    const staffEncontrado= arraystaffs.find((staff)=>staff.id=== nombreBuscar);
+    console.log(staffEncontrado);
+    alert("Usted va a ser atendido por:  " + staffEncontrado.nombre + " " + staffEncontrado.apellido + " " + " dni: " + staffEncontrado.dni + " edad:" + staffEncontrado.edad);
     let bienvenida= parseInt(prompt("Ingrese lo que desea remodelar/redecorar: \n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor \n 6)Salir  "));
     return bienvenida;
 }
 
 //ingresar al sitio
-function Oficina(){
+function oficina(){
     let nombre= prompt("Ingrese su nombre");
     let apellido=prompt("Ingrese su apellido");
     let dni=parseInt(prompt("Ingrese su dni"));
-    const encontrados= presupuesto.find(item=> item.nombre=== Oficina);
+    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+    const encontrados= presupuesto.find(item=> item.id === 1 );
     console.log(encontrados);
 } 
 
 
 
-function Jardin(){
+function jardin(){
     let nombre= prompt("Ingrese su nombre");
     let apellido=prompt("Ingrese su apellido");
     let dni=parseInt(prompt("Ingrese su dni"));
-    const encontrados= presupuesto.find(item=> item.nombre=== Jardin);
+    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+    const encontrados= presupuesto.find(item=> item.id=== 2);
     console.log(encontrados);
    
 }
 
-function Habitacion(){
+function habitacion(){
     let nombre= prompt("Ingrese su nombre");
     let apellido=prompt("Ingrese su apellido");
     let dni=parseInt(prompt("Ingrese su dni"));
-    const encontrados= presupuesto.find(item=> item.nombre=== Habitacion);
+    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+    const encontrados= presupuesto.find(item=> item.id=== 3);
     console.log(encontrados);
 }
 
-function Living(){
+function living(){
     let nombre= prompt("Ingrese su nombre");
     let apellido=prompt("Ingrese su apellido");
     let dni=parseInt(prompt("Ingrese su dni"));
-    const encontrados= presupuesto.find(item=> item.nombre=== Living);
+    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+    const encontrados= presupuesto.find(item=> item.id=== 4);
     console.log(encontrados);
 }
 
-function CocinaComedor(){
+function cocinacomedor(){
     let nombre= prompt("Ingrese su nombre");
     let apellido=prompt("Ingrese su apellido");
     let dni=parseInt(prompt("Ingrese su dni"));
-    const encontrados= presupuesto.find(item=> item.nombre=== CocinaComedor);
+    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+    const encontrados= presupuesto.find(item=> item.id=== 5);
     console.log(encontrados);
 
 }
 
-function Salir(){
+function salir(){
     alert("Gracias por visitar VGdecohome");
 
 }
@@ -94,22 +106,22 @@ function Salir(){
 let bienvenida= bienvenidos();
 switch(bienvenida){
     case 1:
-        Oficina();
+        oficina();
         break;
     case 2:
-        Jardin();
+        jardin();
         break;
     case 3:
-        Habitacion();
+        habitacion();
         break;
     case 4:
-        Living();
+        living();
         break;
     case 5:
-       CocinaComedor();
+       cocinacomedor();
        break;
     case 6:
-        Salir();
+        salir();
         break;
     default:
     alert("incorrecto, vuelva a intentarlo");
