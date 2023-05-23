@@ -19,6 +19,14 @@ body{
    margin-left: 150px;
   
 }
+.img-mine-1{
+    margin-top: 30px;
+    margin-left: 25px;
+    padding-left: 20px;
+}
+ .img-mine-2{
+    margin-top: 30px;
+ }
 
 
 h1{
@@ -43,4 +51,9 @@ font-family: 'Scope One', serif;
 .navbar-mine{
     padding-right: 20px;
     margin-bottom: 50px;
+}
+h3{
+    margin: 30px;
+    font-family: 'Montserrat', sans-serif;
+
 }

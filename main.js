@@ -40,7 +40,7 @@ console.log(presupuesto);
 //bienvenidos
 function bienvenidos(){
     alert("Bienvenidos a VGdecohome");
-    let nombreBuscar= prompt("Ingrese nombre del staff que quiere: \n Emilio \n Martina \n Rocio \n Nicolas \n Ninguno").toUpperCase();
+    let nombreBuscar= prompt("Ingrese nombre del staff que quiere: \n Emilio \n Martina \n Rocio \n Nicolas").toUpperCase();
     const staffEncontrado= arraystaffs.find((staff)=>staff.id=== nombreBuscar);
     console.log(staffEncontrado);
     alert("Usted va a ser atendido por:  " + staffEncontrado.nombre + " " + staffEncontrado.apellido + " " + " dni: " + staffEncontrado.dni + " edad:" + staffEncontrado.edad);
