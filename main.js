@@ -1,3 +1,4 @@
+console.log(document.body);
 //clientes
 class Staff{
     constructor(id,nombre,apellido,dni,edad){
@@ -38,11 +39,28 @@ console.log(presupuesto);
 
 
 //bienvenidos
-function bienvenidos(){
-    alert("Bienvenidos a VGdecohome");
-    let nombreBuscar= prompt("Ingrese nombre del staff que quiere: \n Emilio \n Martina \n Rocio \n Nicolas").toUpperCase();
-    const staffEncontrado= arraystaffs.find((staff)=>staff.id=== nombreBuscar);
+    const alerta= document.getElementById("bienvenidos-alert");
+    alerta.innerText="Hola a todos bienvenidos a VGdecohome"
+    const formulario= document.getElementById("formulario");
+    formulario.addEventListener("submit", Elegirstaff);
+
+function Elegirstaff(){
+    //staff
+    const staffnombres= document.getElementById("nombre");
+    const staffEncontrado= arraystaffs.find(staff=>staff.id=== staffnombres);
+    const container= document.getElementById("staff");
+    const cardStaff= document.createElement("div");
+    cardStaff.innerHTML=`
+                 <h2>${staffEncontrado.nombre}</h2>
+                 <h2>${staffEncontrado.apellido}</h2>
+                 <h2>${staffEncontrado.dni}</h2>
+                 <h2>${staffEncontrado.edad}</h2>
+                `
+    container.appendChild(cardStaff);
     console.log(staffEncontrado);
+    
+
+
     alert("Usted va a ser atendido por:  " + staffEncontrado.nombre + " " + staffEncontrado.apellido + " " + " dni: " + staffEncontrado.dni + " edad:" + staffEncontrado.edad);
     let bienvenida= parseInt(prompt("Ingrese lo que desea remodelar/redecorar: \n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor \n 6)Salir  "));
     return bienvenida;
@@ -103,7 +121,7 @@ function salir(){
 
 }
 
-let bienvenida= bienvenidos();
+let bienvenida= Elegirstaff();
 switch(bienvenida){
     case 1:
         oficina();
@@ -127,3 +145,7 @@ switch(bienvenida){
     alert("incorrecto, vuelva a intentarlo");
     break;
 }
+
+
+
+
