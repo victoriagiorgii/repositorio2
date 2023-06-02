@@ -10,10 +10,10 @@ class Staff{
     }
 }
 
-const staffEmilio= new Staff ("EMILIO","Emilio","Pereyra",35028432,22);
-const staffMartina= new Staff ("MARTINA","Martina","Cosar",28021620,26);
-const staffRocio= new Staff ("ROCIO","Rocio","Carrizo",31675297,30);
-const staffNicolas= new Staff ("NICOLAS","Nicolas","Pedernera",20849275,28);
+const staffEmilio= new Staff ("emilio","Emilio","Pereyra",35028432,22);
+const staffMartina= new Staff ("martina","Martina","Cosar",28021620,26);
+const staffRocio= new Staff ("rocio","Rocio","Carrizo",31675297,30);
+const staffNicolas= new Staff ("nicolas","Nicolas","Pedernera",20849275,28);
 
 const arraystaffs=[];
 
@@ -36,53 +36,62 @@ const presupuesto=[
 console.log(presupuesto);
 
 
-
-
 //bienvenidos
     const alerta= document.getElementById("bienvenidos-alert");
     alerta.innerText="Hola a todos bienvenidos a VGdecohome"
+    const staffselec= document.getElementById("staffseleccion");
+    staffselec.innerText="Elegi con quien quiere ser atendido: \n Emilio \n Martina \n Rocio \n Nicolas"
     const formulario= document.getElementById("formulario");
     formulario.addEventListener("submit", Elegirstaff);
 
-function Elegirstaff(){
+function Elegirstaff(e){
+    e.preventDefault();
     //staff
-    const staffnombres= document.getElementById("nombre");
-    const staffEncontrado= arraystaffs.find(staff=>staff.id=== staffnombres);
-    const container= document.getElementById("staff");
-    const cardStaff= document.createElement("div");
-    cardStaff.innerHTML=`
-                 <h2>${staffEncontrado.nombre}</h2>
-                 <h2>${staffEncontrado.apellido}</h2>
-                 <h2>${staffEncontrado.dni}</h2>
-                 <h2>${staffEncontrado.edad}</h2>
-                `
-    container.appendChild(cardStaff);
+    const staffnombres= document.getElementById("staffnombres").value;
+    console.log(staffnombres);
+    const staffEncontrado= arraystaffs.find((staff) => staff.id=== staffnombres);
     console.log(staffEncontrado);
     
+ }
+ //remodelacion
+    const alertaremodelacion= document.getElementById("remodelacion-alert");
+    alertaremodelacion.innerText="Elige que desea remodelar"
+    const espaciosremodelar= document.getElementById("espacios");
+    espaciosremodelar.innerText= "\n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor \n 6)Salir "
+    const formulario2= document.getElementById("formulario2");
+    formulario2.addEventListener("submit", oficina);
 
-
-    alert("Usted va a ser atendido por:  " + staffEncontrado.nombre + " " + staffEncontrado.apellido + " " + " dni: " + staffEncontrado.dni + " edad:" + staffEncontrado.edad);
-    let bienvenida= parseInt(prompt("Ingrese lo que desea remodelar/redecorar: \n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor \n 6)Salir  "));
-    return bienvenida;
-}
-
-//ingresar al sitio
-function oficina(){
-    let nombre= prompt("Ingrese su nombre");
-    let apellido=prompt("Ingrese su apellido");
-    let dni=parseInt(prompt("Ingrese su dni"));
-    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+ //ingresar al sitio
+ function oficina(e){
+    e.preventDefault();
+    const nombre= document.getElementById("nombre").value;
+    const apellido= document.getElementById("apellido").value;
+    const dni= document.getElementById("dni").value;
+     const usuario={
+        nombre: nombre,
+        apellido: apellido,
+        dni:dni,
+     }
+    console.log(usuario);
     const encontrados= presupuesto.find(item=> item.id === 1 );
-    console.log(encontrados);
-} 
+   console.log(encontrados);
+ } 
 
 
+ const formulario3= document.getElementById("formulario3");
+ formulario3.addEventListener("submit", jardin);
 
-function jardin(){
-    let nombre= prompt("Ingrese su nombre");
-    let apellido=prompt("Ingrese su apellido");
-    let dni=parseInt(prompt("Ingrese su dni"));
-    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
+function jardin(e){
+    e.preventDefault();
+    const nombre= document.getElementById("nombre").value;
+    const apellido= document.getElementById("apellido").value;
+    const dni= document.getElementById("dni").value;
+     const usuario={
+        nombre: nombre,
+        apellido: apellido,
+        dni:dni,
+     }
+     console.log(usuario);
     const encontrados= presupuesto.find(item=> item.id=== 2);
     console.log(encontrados);
    
@@ -121,30 +130,7 @@ function salir(){
 
 }
 
-let bienvenida= Elegirstaff();
-switch(bienvenida){
-    case 1:
-        oficina();
-        break;
-    case 2:
-        jardin();
-        break;
-    case 3:
-        habitacion();
-        break;
-    case 4:
-        living();
-        break;
-    case 5:
-       cocinacomedor();
-       break;
-    case 6:
-        salir();
-        break;
-    default:
-    alert("incorrecto, vuelva a intentarlo");
-    break;
-}
+
 
 
 
