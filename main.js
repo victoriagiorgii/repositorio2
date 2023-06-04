@@ -36,6 +36,8 @@ const presupuesto=[
 console.log(presupuesto);
 
 
+
+
 //bienvenidos
     const alerta= document.getElementById("bienvenidos-alert");
     alerta.innerText="Hola a todos bienvenidos a VGdecohome"
@@ -52,84 +54,52 @@ function Elegirstaff(e){
     const staffEncontrado= arraystaffs.find((staff) => staff.id=== staffnombres);
     console.log(staffEncontrado);
     
- }
- //remodelacion
-    const alertaremodelacion= document.getElementById("remodelacion-alert");
-    alertaremodelacion.innerText="Elige que desea remodelar"
-    const espaciosremodelar= document.getElementById("espacios");
-    espaciosremodelar.innerText= "\n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor \n 6)Salir "
-    const formulario2= document.getElementById("formulario2");
-    formulario2.addEventListener("submit", oficina);
+}
+
+
+ //registro del cliente y remodelacion
+ const alertaremodelacion= document.getElementById("registrate y remodela");
+ alertaremodelacion.innerText="Registrese y seleccione que va a remodelar";
+ const espaciosremodelar= document.getElementById("espacios");
+ espaciosremodelar.innerText= "\n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor"
+ const formulario2= document.getElementById("formulario2");
+ formulario2.addEventListener("submit", remodelacion);
 
  //ingresar al sitio
- function oficina(e){
+ function remodelacion(e){
     e.preventDefault();
     const nombre= document.getElementById("nombre").value;
     const apellido= document.getElementById("apellido").value;
     const dni= document.getElementById("dni").value;
-     const usuario={
-        nombre: nombre,
-        apellido: apellido,
+    const espacios=document.getElementById("espaciosremodelacion").value;
+
+    console.log(espacios);
+    console.log(typeof espacios);
+    let usuario={
+        nombre:nombre,
+        apellido:apellido,
         dni:dni,
-     }
-    console.log(usuario);
-    const encontrados= presupuesto.find(item=> item.id === 1 );
+    };
+   localStorage.setItem("usuario", JSON.stringify(usuario));
+   const encontrados= presupuesto.find(item=> item.id == espacios);
    console.log(encontrados);
- } 
-
-
- const formulario3= document.getElementById("formulario3");
- formulario3.addEventListener("submit", jardin);
-
-function jardin(e){
-    e.preventDefault();
-    const nombre= document.getElementById("nombre").value;
-    const apellido= document.getElementById("apellido").value;
-    const dni= document.getElementById("dni").value;
-     const usuario={
-        nombre: nombre,
-        apellido: apellido,
-        dni:dni,
-     }
-     console.log(usuario);
-    const encontrados= presupuesto.find(item=> item.id=== 2);
-    console.log(encontrados);
-   
 }
 
-function habitacion(){
-    let nombre= prompt("Ingrese su nombre");
-    let apellido=prompt("Ingrese su apellido");
-    let dni=parseInt(prompt("Ingrese su dni"));
-    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
-    const encontrados= presupuesto.find(item=> item.id=== 3);
-    console.log(encontrados);
-}
+const usuarioStorage=document.createElement("usuario");
+usuarioStorage.innerText="Bienvenido/a"+ usuarioStorage;
 
-function living(){
-    let nombre= prompt("Ingrese su nombre");
-    let apellido=prompt("Ingrese su apellido");
-    let dni=parseInt(prompt("Ingrese su dni"));
-    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
-    const encontrados= presupuesto.find(item=> item.id=== 4);
-    console.log(encontrados);
-}
 
-function cocinacomedor(){
-    let nombre= prompt("Ingrese su nombre");
-    let apellido=prompt("Ingrese su apellido");
-    let dni=parseInt(prompt("Ingrese su dni"));
-    let Oficina= parseInt(prompt("Ingrese numero del espacio deseado seleccionado anteriormente"));
-    const encontrados= presupuesto.find(item=> item.id=== 5);
-    console.log(encontrados);
 
-}
 
-function salir(){
-    alert("Gracias por visitar VGdecohome");
 
-}
 
+
+
+
+
+
+
+ 
 
 
 
