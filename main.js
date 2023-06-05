@@ -55,6 +55,16 @@ function Elegirstaff(e){
     
 }
 
+staffnombres.addEventListener("input", () =>{
+ const valor=staffnombres.value;
+
+ const valorConPrimeraLetraMayuscula=valor.charAt(0).toUpperCase()+ valor.slice(1);
+
+ if(valor != valorConPrimeraLetraMayuscula){
+    staffnombres.value = valorConPrimeraLetraMayuscula;  
+ }
+});
+
 
  //registro del cliente y remodelacion
  const alertaremodelacion= document.getElementById("registrate y remodela");
