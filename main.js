@@ -10,10 +10,10 @@ class Staff{
     }
 }
 
-const staffEmilio= new Staff ("emilio","Emilio","Pereyra",35028432,22);
-const staffMartina= new Staff ("martina","Martina","Cosar",28021620,26);
-const staffRocio= new Staff ("rocio","Rocio","Carrizo",31675297,30);
-const staffNicolas= new Staff ("nicolas","Nicolas","Pedernera",20849275,28);
+const staffEmilio= new Staff ("Emilio","Pereyra",35028432,22);
+const staffMartina= new Staff ("Martina","Cosar",28021620,26);
+const staffRocio= new Staff ("Rocio","Carrizo",31675297,30);
+const staffNicolas= new Staff ("Nicolas","Pedernera",20849275,28);
 
 const arraystaffs=[];
 
@@ -42,8 +42,7 @@ console.log(presupuesto);
     const alerta= document.getElementById("bienvenidos-alert");
     alerta.innerText="Hola a todos bienvenidos a VGdecohome"
     const staffselec= document.getElementById("staffseleccion");
-    staffselec.innerText="Elegi con quien quiere ser atendido: \n Emilio \n Martina \n Rocio \n Nicolas"
-    const formulario= document.getElementById("formulario");
+    staffselec.innerText="Elegi con quien quiere ser atendido: \n -Emilio \n -Martina \n -Rocio \n -Nicolas"
     formulario.addEventListener("submit", Elegirstaff);
 
 function Elegirstaff(e){
@@ -84,9 +83,13 @@ function Elegirstaff(e){
    const encontrados= presupuesto.find(item=> item.id == espacios);
    console.log(encontrados);
 }
+const usuarioStorage= JSON.parse(localStorage.getItem("usuario"));
 
-const usuarioStorage=document.createElement("usuario");
-usuarioStorage.innerText="Bienvenido/a"+ usuarioStorage;
+if(usuarioStorage){
+    const saludobienvenida= document.getElementById("saludo");
+    saludobienvenida.innerText="Bienvenido/a"+" "+usuarioStorage.nombre + " "+ usuarioStorage.apellido;
+}
+
 
 
 

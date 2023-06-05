@@ -55,5 +55,56 @@ font-family: 'Scope One', serif;
 h3{
     margin: 30px;
     font-family: 'Montserrat', sans-serif;
+}
+.div-mine{
+    margin: 50px;
+    font-size: larger;
+    font-style: italic;
+    text-align: center;
+}
+.h1-mine{
+    margin-top: 50px;
+    text-align: center;
+    font-style: initial;
+    
+}
+.espacio-mine{
+    margin-left:40px;
+    font-size: large;
+}
+.clientes{
+    text-align: center;
+}
+.cliente{
+    margin: 20px;
+}
+.cliente1{
+    margin: 20px;
+}
+.cliente2{
+    margin: 20px;
+}
+.cliente3{
+    margin: 20px;
+}
+.cliente4{
+    margin: 20px;
+}
+.cliente5{
+    margin: 20px;
+}
+
+.staff-mine{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.p-staff{
+    margin-bottom: 30px;
+    
+}
+.staffs{
+    margin-left: 30px;
+    margin-bottom: 20px;
 
 }
