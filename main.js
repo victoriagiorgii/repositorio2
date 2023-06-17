@@ -26,26 +26,30 @@ console.log(arraystaffs);
 
 //presupuesto
 
-const presupuesto=[
-    {id:1, nombre:("oficina"),precio:20000},
-    {id:2, nombre:("jardin"), precio:26000},
-    {id:3, nombre:("habitacion"), precio:30000},
-    {id:4, nombre:("living"), precio:22500},
-    {id:5, nombre:("cocina/comedor"), precio:34500},
-];
-console.log(presupuesto);
 
-
-
+fetch("./data.json")
+ .then((response) => response.json())
+   .then((data) => {
+    const lista= document.getElementById("lista"); 
+     data.forEach((producto) => {  
+        const lista= document.createElement("li"); 
+        li.innerHTML = `
+        <h2>${producto.id}</h2>
+       <p>${producto.nombre}</p>
+      <b>${producto.precio}</b>
+     <hr />`;
+     lista.append(li)
+     });
+});
 
 //bienvenidos
     const alerta= document.getElementById("bienvenidos-alert");
     alerta.innerText="Hola a todos bienvenidos a VGdecohome"
     const staffselec= document.getElementById("staffseleccion");
     staffselec.innerText="Elegi con quien quiere ser atendido: \n -Emilio \n -Martina \n -Rocio \n -Nicolas"
-    formulario.addEventListener("submit", Elegirstaff);
+    formulario1.addEventListener("submit", elegirstaff);
 
-function Elegirstaff(e){
+function elegirstaff(e){
     e.preventDefault();
     //staff
     const staffnombres= document.getElementById("staffnombres").value;
@@ -54,7 +58,7 @@ function Elegirstaff(e){
     console.log(staffEncontrado);
     
 }
-
+//eleccion del staff
 staffnombres.addEventListener("input", () =>{
  const valor=staffnombres.value;
 
@@ -92,8 +96,17 @@ staffnombres.addEventListener("input", () =>{
    localStorage.setItem("usuario", JSON.stringify(usuario));
    const encontrados= presupuesto.find(item=> item.id == espacios);
    console.log(encontrados);
+    
+Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Has finalizado la solicitud, su remodelacion ya fue registrada',
+    showConfirmButton: false,
+    timer: 4000
+  })
 }
 const usuarioStorage= JSON.parse(localStorage.getItem("usuario"));
+//Bienvenida al usuario
 
 if(usuarioStorage){
     const saludobienvenida= document.getElementById("saludo");
@@ -102,17 +115,15 @@ if(usuarioStorage){
 
 
 
+//despedida por consola
+
+setTimeout(() => {
+console.log("Gracias por visitarnos");
+}, 20000);
 
 
 
 
-
-
-
-
-
-
- 
 
 
 

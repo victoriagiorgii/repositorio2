@@ -1,0 +1,7 @@
+[
+    { "nombre": "Oficina", "precio": 20000, "id": 1 },
+    { "nombre": "Jardin", "precio": 26000 , "id": 2 },
+    { "nombre": "Habitacion", "precio":30000 , "id": 3 },
+    { "nombre": "Living", "precio":22500 , "id": 4 },
+    { "nombre": "Cocina/Comedor", "precio":34500 , "id": 5 }
+]

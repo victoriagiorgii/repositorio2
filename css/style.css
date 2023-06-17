@@ -46,6 +46,7 @@ p{
 }
 .fontletra{
 font-family: 'Scope One', serif;
+font-size: larger;
 }
 
 .navbar-mine{
@@ -63,14 +64,19 @@ h3{
     text-align: center;
 }
 .h1-mine{
-    margin-top: 50px;
-    text-align: center;
-    font-style: initial;
-    
+    margin-top: 80px;
+    margin-left: 20px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif ; 
+    font-size: medium;    
 }
 .espacio-mine{
-    margin-left:40px;
-    font-size: large;
+   font-family: 'Montserrat', sans-serif;
+   margin: 0%;
+    
+}
+.espacios2-mine{
+    margin-top: 0%;
 }
 .clientes{
     text-align: center;
@@ -80,18 +86,23 @@ h3{
 }
 .cliente1{
     margin: 20px;
+    border-color: rgb(0, 0, 0);
 }
 .cliente2{
     margin: 20px;
+    border-color: rgb(0, 0, 0);
 }
 .cliente3{
     margin: 20px;
+    border-color: rgb(0, 0, 0);
 }
 .cliente4{
     margin: 20px;
+    border-color: rgb(0, 0, 0);
 }
 .cliente5{
     margin: 20px;
+    border-color: rgb(0, 0, 0);
 }
 
 .staff-mine{
@@ -100,11 +111,16 @@ h3{
 
 }
 .p-staff{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     
 }
 .staffs{
-    margin-left: 30px;
+    margin-left: 58px;
     margin-bottom: 20px;
-
+    border-color: rgb(0, 0, 0);
+}
+.despe{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 20px;
 }
