@@ -1,8 +1,9 @@
 /* font-family: 'Montserrat', sans-serif; */
 /* font-family: 'Scope One', serif; */
+/*font-family: 'Castoro Titling', cursive;*/
 
 body{
-    background-color: rgb(238, 196, 157);
+    background-color: rgb(129, 116, 104);
     
 }
 .logo{
@@ -21,8 +22,8 @@ body{
 }
 .img-mine-1{
     margin-top: 30px;
-    margin-left: 25px;
-    padding-left: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
 }
  .img-mine-2{
     margin-top: 30px;
@@ -45,8 +46,16 @@ p{
     margin: 60px;
 }
 .fontletra{
-font-family: 'Scope One', serif;
-font-size: larger;
+    margin-top: 250px;
+    font-family: 'Castoro Titling', cursive;
+    font-size: large;
+    
+
+}
+.fontletra2{
+    font-family: 'Castoro Titling', cursive;
+    font-size: large;
+    margin-top: 80px;
 }
 
 .navbar-mine{
@@ -54,8 +63,10 @@ font-size: larger;
     margin-bottom: 50px;
 }
 h3{
-    margin: 30px;
-    font-family: 'Montserrat', sans-serif;
+    margin-top: 80px;
+    margin-bottom: 200px;
+    font-family: 'Scope One', serif;
+    font-style: italic;
 }
 .div-mine{
     margin: 50px;
@@ -64,22 +75,26 @@ h3{
     text-align: center;
 }
 .h1-mine{
-    margin-top: 80px;
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-bottom: 0%;
     text-align: left;
     font-family: 'Montserrat', sans-serif ; 
-    font-size: medium;    
+    font-size: large; 
+    font-style: normal;   
+    text-decoration: underline;
 }
 .espacio-mine{
    font-family: 'Montserrat', sans-serif;
-   margin: 0%;
+   margin: 0%;;
     
 }
 .espacios2-mine{
     margin-top: 0%;
+    margin-bottom: 0%;
 }
 .clientes{
     text-align: center;
+    margin-top: 0%;
 }
 .cliente{
     margin: 20px;
@@ -87,6 +102,7 @@ h3{
 .cliente1{
     margin: 20px;
     border-color: rgb(0, 0, 0);
+
 }
 .cliente2{
     margin: 20px;
@@ -107,11 +123,23 @@ h3{
 
 .staff-mine{
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Scope One', serif;
+    padding: 50px;
+    margin: 50px;
 
 }
+.h3-elegirstaff{
+    margin-left: 60px;
+    margin-bottom: 0%;
+    margin-top: 200px;
+    font-size: medium;
+    font-style: normal;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif ; 
+}
 .p-staff{
-    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif ; 
+    margin-top: 20px;
     
 }
 .staffs{
@@ -121,6 +149,20 @@ h3{
 }
 .despe{
     font-family: 'Montserrat', sans-serif;
+    margin-top: 80px;
     text-align: center;
-    margin-top: 20px;
+    font-style: italic;
+}
+
+.li-mine{
+    margin-bottom: 0%;
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    text-decoration: underline;
+}
+.ol-li{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
+    margin-top: 30px;
 }
