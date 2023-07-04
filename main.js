@@ -93,27 +93,6 @@ fetch("./data.json")
      });
 });
 
-//arraylocalsotrage
-class Registro {
-    constructor(nombre, apellido,dni, espacio) {
-      this.nombre= nombre;
-      this.apellido = apellido;
-      this.dni = dni;
-      this.espacio = espacio;
-    }
-  }
-
-  const usuario=new Registro("nombre", "apellido", "dni", "espacio");
- 
-  const arrayUsuarios= [];
-  arrayUsuarios.push(usuario);
-  console.log(arrayUsuarios);
-
-  if (localStorage.getItem('registro')) {
-    let registros = JSON.parse(localStorage.getItem('registro'));
-    registros.push(...arrayUsuarios);
-    localStorage.setItem("registro",JSON.stringify(registros));
-}  
 
 
 const formulario2= document.getElementById("formulario2");
@@ -133,27 +112,14 @@ function remodelacion(e){
     console.log(typeof espacios);
 const encontrados= presupuesto.find(item=> item.id == espacios);
 console.log(encontrados);
-//arraylocalsotrage
-class Registro {
-    constructor(nombre, apellido,dni, espacio) {
-      this.nombre= nombre;
-      this.apellido = apellido;
-      this.dni = dni;
-      this.espacio = espacio;
-    }
-  }
 
-  const usuario=new Registro("nombre", "apellido", "dni", "espacio");
- 
-  const arrayUsuarios= [];
-  arrayUsuarios.push(usuario);
-  console.log(arrayUsuarios);
-
-  if (localStorage.getItem('registro')) {
-    let registros = JSON.parse(localStorage.getItem('registro'));
-    registros.push(...arrayUsuarios);
-    localStorage.setItem("registro",JSON.stringify(registros));
-}  
+let usuario={
+    nombre:nombre,
+    apellido:apellido,
+    dni:dni,
+};
+localStorage.setItem("usuario", JSON.stringify(usuario));
+console.log(usuario);
 
 
 
