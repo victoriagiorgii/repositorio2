@@ -23,7 +23,7 @@ arraystaffs.push(staffRocio);
 arraystaffs.push(staffNicolas);
 
 console.log(arraystaffs);
-//presupuesto
+//preciosenconsola
 const presupuesto=[
 
     {id:1, nombre:("Oficina"),precio:20000},
@@ -34,19 +34,46 @@ const presupuesto=[
     
 ]
 
-
+//bienvenidos
+const staffelegir=document.getElementById("staffelegir")
+staffelegir.innerText="Elegi con quien quiere ser atendido"
+const staffselec= document.getElementById("staffseleccion");
+staffselec.innerText="-Emilio \n -Martina \n -Rocio \n -Nicolas"
+formulario1.addEventListener("submit", elegirstaff);
 
 //operadores
 const staffs=["Emilio","Rocio","Nicolas","Martina"];
 const staffs2=staffs;
 console.log(staffs);
 
+function elegirstaff(e){
+e.preventDefault();
+//staff
+const staffnombres= document.getElementById("staffnombres").value;
+console.log(staffnombres);
+const staffEncontrado= arraystaffs.find((staff) => staff.id=== staffnombres);
+console.log(staffEncontrado);
+
+}
+
+//eleccion del staff
+staffnombres.addEventListener("input", () =>{
+const valor=staffnombres.value;
+
+const valorConPrimeraLetraMayuscula=valor.charAt(0).toUpperCase()+ valor.slice(1);
+
+if(valor != valorConPrimeraLetraMayuscula){
+staffnombres.value = valorConPrimeraLetraMayuscula;  
+}
+});
+
+
+//presupuesto
+fetch("./data.json")
+.then((response)=> response.json())
+.then((data)=>console.log(data));
 
 //fetchpresupuesto
-
-fetch('./data.json')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
 
 //fetch
 const alerta= document.getElementById("bienvenidos-alert");
@@ -54,72 +81,46 @@ alerta.innerText="Hola a todos bienvenidos a VGdecohome"
 fetch("./data.json")
  .then((response) => response.json())
    .then((data) => {
-    const lista= document.getElementById("lista"); 
+    const lista= document.getElementById("div1"); 
     data.forEach((producto) => {  
-        const li= document.createElement("li"); 
-        li.innerHTML = `
+        const div= document.createElement("div"); 
+        div.innerHTML = `
         <h4>${producto.id}</h4>
         <h4>${producto.nombre}</h4>
         <h4>${producto.precio}</h4>
         <hr />`;
-     lista.append(li)
+     lista.append(div)
      });
 });
 
-//bienvenidos
-    const staffelegir=document.getElementById("staffelegir")
-    staffelegir.innerText="Elegi con quien quiere ser atendido"
-    const staffselec= document.getElementById("staffseleccion");
-    staffselec.innerText="-Emilio \n -Martina \n -Rocio \n -Nicolas"
-    formulario1.addEventListener("submit", elegirstaff);
-
-function elegirstaff(e){
-    e.preventDefault();
-    //staff
-    const staffnombres= document.getElementById("staffnombres").value;
-    console.log(staffnombres);
-    const staffEncontrado= arraystaffs.find((staff) => staff.id=== staffnombres);
-    console.log(staffEncontrado);
-    
-}
-
-//eleccion del staff
-staffnombres.addEventListener("input", () =>{
- const valor=staffnombres.value;
-
- const valorConPrimeraLetraMayuscula=valor.charAt(0).toUpperCase()+ valor.slice(1);
-
- if(valor != valorConPrimeraLetraMayuscula){
-    staffnombres.value = valorConPrimeraLetraMayuscula;  
- }
-});
-
-//registro del cliente y remodelacion
-const alertaremodelacion= document.getElementById("registrate y remodela");
-alertaremodelacion.innerText="Registrese y seleccione que va a remodelar";
-const espaciosremodelar= document.getElementById("espacios");
-espaciosremodelar.innerText= "\n 1)Oficina \n 2)Jardin \n 3)Habitacion \n 4)Living \n 5)CocinaComedor"
 const formulario2= document.getElementById("formulario2");
 formulario2.addEventListener("submit", remodelacion);
 
-//ingresar al sitio
+//regristro del cliente
+const registrarse= document.getElementById("registrate")
 function remodelacion(e){
-   e.preventDefault();
-   const nombre= document.getElementById("nombre").value;
-   const apellido= document.getElementById("apellido").value;
-   const dni= document.getElementById("dni").value;
-   const espacios=document.getElementById("espaciosremodelacion").value;
+    e.preventDefault();
+    const nombre= document.getElementById("nombres").value;
+    const apellido= document.getElementById("apellidos").value;
+    const dni= document.getElementById("dnis").value;
+    const espacios=document.getElementById("espaciosremodelacion").value;
+    localStorage.setItem("espacios", JSON.parse(espacios));
+    console.log(espacios);
+    console.log(typeof espacios);
+    let usuario={
+        nombre:nombre,
+        apellido:apellido,
+        dni:dni,
+    };
+    localStorage.setItem("usuario", JSON.stringify(usuario));
+    console.log(usuario);
+   const encontrados= presupuesto.find(item=> item.id == espacios);
+   console.log(encontrados);
+  
+//traer info de localstorage
+const usuarioGuardados= JSON.parse(localStorage.getItem("usuario"));
 
-   console.log(espacios);
-   console.log(typeof espacios);
-   let usuario={
-       nombre:nombre,
-       apellido:apellido,
-       dni:dni,
-   };
-  localStorage.setItem("usuario", JSON.stringify(usuario));
-  const encontrados= presupuesto.find(item=> item.id == espacios);
-  console.log(encontrados);
+
 //libreria 
 Swal.fire({
    position: 'center',
