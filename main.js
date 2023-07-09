@@ -96,7 +96,9 @@ fetch("./data.json")
 
 
 const formulario2= document.getElementById("formulario2");
-formulario2.addEventListener("submit", remodelacion);
+formulario2.addEventListener("submit", (e)=>{ 
+    remodelacion(e)
+});
 
 
 //regristro del cliente
@@ -107,8 +109,9 @@ function remodelacion(e){
     const apellido= document.getElementById("apellidos").value;
     const dni= document.getElementById("dnis").value;
     const espacios=document.getElementById("espaciosremodelacion").value;
-    localStorage.setItem("espacios", JSON.parse(espacios));
+    localStorage.setItem("espaciosNumero", JSON.parse(espacios));
     console.log(espacios);
+
     console.log(typeof espacios);
 const encontrados= presupuesto.find(item=> item.id == espacios);
 console.log(encontrados);
@@ -118,8 +121,9 @@ let usuario={
     apellido:apellido,
     dni:dni,
 };
-localStorage.setItem("usuario", JSON.stringify(usuario));
+localStorage.setItem("usuarioNombre", JSON.stringify(usuario));
 console.log(usuario);
+
 
 
 
